@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms in html</title>
+</head>
+<style>
+    body{
+        font-size: 1.5em;
+    }
+    h1 {
+        text-transform: uppercase;
+        user-select: none;
+    }
+    .question{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .answer input{
+        display: inline-block;
+    }
+
+</style>
+
+<body>
+    <h1>
+        my form elements
+    </h1>
+
+    <input type="text">
+    <div class="question">
+        <p>1.Which of the following help building muscles? </p>
+        <input type="hidden" value=pulses>
+
+    </div>
+
+    <div>
+        <input type="checkbox" value="vegetable">
+        <span>vegetable</span>
+    </div>
+    <div> <input type="checkbox" value="fruit">
+        <span>fruit</span>
+    </div>
+    <div> <input type="checkbox" value="pulses" >
+        <span>pulses</span>
+    </div>
+    <div> <input type="checkbox" value="cereals">
+        <span>cereals</span>
+    </div>
+    <div class="answer">
+        <p>2. Which is the bigger planet?</p>
+    </div>
+    <div>
+        <input type="Radio" value="Mercury" name="Planets"><span>Mercury</span><br>
+        <input type="Radio" value="Venus" name="Planets"><span>Venus</span><br>
+        <input type="Radio" value="Jupiter" name="Planets"><span>Jupiter</span><br>
+        <input type="Radio" value="Earth" name="Planets"><span>Earth</span><br>
+
+
+    </div>
+    <button onclick="onSubmit(event)">Submit</button>
+
+<script>
+    function onSubmit(event){
+        var answer=document.querySelector("input[type=hidden]").value
+        var selection=document.querySelector("input[type=checkbox]:checked").value
+        if(answer[0]==selection[0]){
+            alert("correct")
+        }else{
+            alert("not correct")
+        }
+    }
+</script>
+</body>
+
+
+</html>
