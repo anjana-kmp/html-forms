@@ -7,20 +7,22 @@
     <title>forms in html</title>
 </head>
 <style>
-    body{
+    body {
         font-size: 1.5em;
     }
+
     h1 {
         text-transform: uppercase;
         user-select: none;
     }
-    .question{
+
+    .question {
         font-family: 'Courier New', Courier, monospace;
     }
-    .answer input{
+
+    .answer input {
         display: inline-block;
     }
-
 </style>
 
 <body>
@@ -42,36 +44,49 @@
     <div> <input type="checkbox" value="fruit">
         <span>fruit</span>
     </div>
-    <div> <input type="checkbox" value="pulses" >
+    <div> <input type="checkbox" value="pulses">
         <span>pulses</span>
     </div>
     <div> <input type="checkbox" value="cereals">
         <span>cereals</span>
     </div>
-    <div class="answer">
-        <p>2. Which is the bigger planet?</p>
-    </div>
-    <div>
-        <input type="Radio" value="Mercury" name="Planets"><span>Mercury</span><br>
-        <input type="Radio" value="Venus" name="Planets"><span>Venus</span><br>
-        <input type="Radio" value="Jupiter" name="Planets"><span>Jupiter</span><br>
-        <input type="Radio" value="Earth" name="Planets"><span>Earth</span><br>
-
-
-    </div>
     <button onclick="onSubmit(event)">Submit</button>
 
-<script>
-    function onSubmit(event){
-        var answer=document.querySelector("input[type=hidden]").value
-        var selection=document.querySelector("input[type=checkbox]:checked").value
-        if(answer[0]==selection[0]){
-            alert("correct")
-        }else{
-            alert("not correct")
+    <div class="question">
+        <p>2. Which is the bigger planet?</p>
+        <input type="hidden" value="Jupiter">
+    </div>
+    <div>
+        <input type="radio" value="Mercury" name="Planets"><span>Mercury</span><br>
+        <input type="radio" value="Venus" name="Planets"><span>Venus</span><br>
+        <input type="radio" value="Jupiter" name="Planets"><span>Jupiter</span><br>
+        <input type="radio" value="Earth" name="Planets"><span>Earth</span><br>
+
+
+    </div>
+    <button onclick="onSubmitm(event)">Submit</button>
+    <script>
+        function onSubmit(event) {
+            var answer = document.querySelector("input[type=hidden]").value
+            var selection = document.querySelector("input[type=checkbox]:checked").value
+            if (answer[0] == selection[0]) {
+                alert("correct")
+            } else {
+                alert("not correct")
+            }
         }
-    }
-</script>
+        function onSubmitm(event) {
+            var answer = document.querySelectorAll("input[type=hidden]")
+            var selection = document.querySelectorAll("input[type=radio]:checked")
+            if (answer[1].value == selection[0].value) {
+                alert("correct")
+            } else {
+                alert("not correct")
+            }
+
+
+        }
+    </script>
 </body>
 
 
